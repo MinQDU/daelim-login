@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 class SwaggerConfig {
-    private val swaggerURL = "http://localhost:8081"
+    private val swaggerURL = "http://localhost:8080"
 
     private val swaggerDescription = "Daelim Login API"
 
