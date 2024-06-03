@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: daelim-login
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://127.0.0.1:3306/login?zeroDateTimeBehavior=convertToNull"
+    #    url: "jdbc:mysql://127.0.0.1:3306/[project-name]?zeroDateTimeBehavior=convertToNull"
+    username: root
+    password: ${MYSQL_PASSWORD}
+    jpa:
+      database: mysql
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      properties:
+        hibernate:
+          storage_engine: innodb
+          format_sql: true
+          use_sql_comments: true
+      hibernate:
+        ddl-auto: validate
+      open-in-view: false
+      show_sql: true
+springdoc:
+  swagger-ui:
+    displayOperationId: true
+    enabled: true
+    persist-authorization: true
+jwt:
+  access_token_expiration_time: 36000000 # 1시간
+  refresh_token_expiration_time: 604008000 # 7일
+  secret: ${JWT_SECRET}
