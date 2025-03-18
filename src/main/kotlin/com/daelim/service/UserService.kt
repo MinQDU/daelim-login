@@ -44,7 +44,7 @@ class UserService(
     }
 
     fun generateToken(user: User): String {
-        val expirationTime = 1000 * 60 * 60 * 24 // 24 hours
+        val expirationTime = 1000 * 60 * 60 * 12 // 12 hours
         return Jwts.builder()
             .setSubject(user.username)
             .setClaims(mapOf("userId" to user.id))
